@@ -1,0 +1,205 @@
+/* resources/css/actualites/index.css */
+
+/* Base Container */
+.actualites-container {
+    @apply container mx-auto px-4 py-6;
+}
+
+/* Page Header */
+.actualites-header {
+    @apply flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between items-center mb-6;
+}
+
+.actualites-title {
+    @apply text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+}
+
+.actualites-count {
+    @apply text-sm text-gray-500 mt-1;
+}
+
+/* Search and Add Button */
+.actualites-actions {
+    @apply flex flex-col sm:flex-row w-full md:w-auto gap-3;
+}
+
+.search-form {
+    @apply relative;
+}
+
+.search-input {
+    @apply pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full sm:w-64 text-sm;
+}
+
+.search-icon {
+    @apply h-5 w-5 absolute left-3 top-2.5 text-gray-400;
+}
+
+.add-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md transition duration-200 ease-in-out text-sm md:text-base flex items-center justify-center gap-2 whitespace-nowrap;
+}
+
+.add-icon {
+    @apply h-5 w-5;
+}
+
+/* Flash Message */
+.flash-message {
+    @apply bg-blue-50 border-l-4 border-blue-500 text-blue-700 p-4 mb-6 rounded shadow-sm max-w-4xl mx-auto;
+}
+
+.flash-icon {
+    @apply h-5 w-5 mr-2 text-blue-500;
+}
+
+/* Table Container */
+.table-container {
+    @apply bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 max-w-4xl mx-auto;
+}
+
+/* Table Styles */
+.actualites-table {
+    @apply min-w-full divide-y divide-gray-200;
+}
+
+.table-header {
+    @apply bg-gray-50;
+}
+
+.table-header-cell {
+    @apply px-4 md:px-6 py-3 text-left text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.table-row {
+    @apply hover:bg-gray-50 transition duration-150 ease-in-out;
+}
+
+.table-cell {
+    @apply px-4 md:px-6 py-4 whitespace-nowrap text-sm md:text-base text-gray-500;
+}
+
+.title-cell {
+    @apply px-4 md:px-6 py-4;
+}
+
+.title-text {
+    @apply text-sm md:text-base font-medium text-gray-900;
+}
+
+.status-badge {
+    @apply text-xs text-gray-500 mt-1;
+}
+
+.published-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800;
+}
+
+.draft-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800;
+}
+
+.date-cell {
+    @apply flex items-center;
+}
+
+.date-icon {
+    @apply h-4 w-4 mr-1 text-gray-400;
+}
+
+.content-cell {
+    @apply px-4 md:px-6 py-4 max-w-xs;
+}
+
+.content-text {
+    @apply text-sm md:text-base text-gray-500 line-clamp-2;
+}
+
+.image-cell {
+    @apply px-4 md:px-6 py-4 whitespace-nowrap text-center;
+}
+
+.image-container {
+    @apply flex justify-center;
+}
+
+.image-wrapper {
+    @apply w-12 h-12 md:w-16 md:h-16 bg-gray-200 rounded-md border border-gray-200 hover:shadow-md transition duration-150 cursor-pointer flex items-center justify-center;
+}
+
+.image-placeholder {
+    @apply text-xs md:text-sm text-gray-400 italic;
+}
+
+.actions-cell {
+    @apply px-4 md:px-6 py-4 whitespace-nowrap text-center text-sm md:text-base;
+}
+
+.actions-container {
+    @apply flex items-center justify-center space-x-2;
+}
+
+.action-button {
+    @apply transition duration-150 ease-in-out p-2 rounded-full;
+}
+
+.edit-button {
+    @apply text-blue-600 hover:text-blue-800 hover:bg-blue-50;
+}
+
+.view-button {
+    @apply text-green-600 hover:text-green-800 hover:bg-green-50;
+}
+
+.delete-button {
+    @apply text-red-600 hover:text-red-800 hover:bg-red-50;
+}
+
+.action-icon {
+    @apply h-5 w-5;
+}
+
+/* Empty State */
+.empty-state {
+    @apply px-6 py-4 text-center text-gray-500 text-sm md:text-base;
+}
+
+.empty-icon {
+    @apply h-12 w-12 text-gray-400 mb-2;
+}
+
+.empty-text {
+    @apply text-gray-500;
+}
+
+.reset-search {
+    @apply text-blue-600 hover:underline mt-2;
+}
+
+/* Pagination */
+.pagination-container {
+    @apply bg-gray-50 px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6;
+}
+
+.mobile-pagination {
+    @apply flex-1 flex justify-between sm:hidden;
+}
+
+.pagination-button {
+    @apply relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md;
+}
+
+.pagination-button-active {
+    @apply text-gray-700 bg-white hover:bg-gray-50;
+}
+
+.pagination-button-disabled {
+    @apply text-gray-300 bg-white cursor-not-allowed;
+}
+
+.pagination-info {
+    @apply text-sm text-gray-700;
+}
+
+.pagination-nav {
+    @apply relative z-0 inline-flex rounded-md shadow-sm -space-x-px;
+}

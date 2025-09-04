@@ -1,0 +1,108 @@
+body {
+    background: linear-gradient(135deg, #f8fafc, #eff6ff, #e0e7ff);
+    min-height: 100vh;
+    color: #1f2937;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    margin-left: 256px;
+    padding-top: 80px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.main-content.sidebar-closed {
+    margin-left: 64px;
+}
+
+@media (max-width: 767px) {
+    .main-content {
+        margin-left: 0;
+        padding-top: 64px;
+    }
+    .main-content.sidebar-closed {
+        margin-left: 0;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fade-in 0.8s ease-out;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    animation: slide-up 0.8s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    animation: pulse-glow 2s infinite;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #3b82f6, #1e3a8a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Animations */
+@keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 12px rgba(59, 130, 246, 0.4); }
+    50% { box-shadow: 0 0 24px rgba(59, 130, 246, 0.7); }
+}
+

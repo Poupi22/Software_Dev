@@ -1,0 +1,84 @@
+/* Permissions Index Styles */
+.permissions-container {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.permissions-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white;
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+    border-radius: 0 0 12px 12px;
+}
+
+.table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.permissions-table {
+    width: 100%;
+    min-width: 600px;
+}
+
+.permissions-table th {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    transition: all 0.2s ease;
+}
+
+.btn-view {
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.1);
+}
+.btn-view:hover {
+    background-color: rgba(59, 130, 246, 0.2);
+}
+
+.btn-edit {
+    color: #f59e0b;
+    background-color: rgba(245, 158, 11, 0.1);
+}
+.btn-edit:hover {
+    background-color: rgba(245, 158, 11, 0.2);
+}
+
+.btn-delete {
+    color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+.btn-delete:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .permissions-table th:first-child,
+    .permissions-table td:first-child {
+        display: none;
+    }
+    
+    .action-btn {
+        width: 28px;
+        height: 28px;
+    }
+}

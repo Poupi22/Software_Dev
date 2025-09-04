@@ -1,0 +1,559 @@
+*   [33m015c4c8[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'rayan' into 'main'
+[31m|[m[32m\[m  
+[31m|[m * [33m94decc6[m agrandissement de la photo sur le relevé
+[31m|[m[31m/[m  
+*   [33mfb6f25f[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m  
+[33m|[m * [33md914bc7[m gestion du nom lors de l'impression du pdf
+[33m|[m[33m/[m  
+*   [33mb2e4599[m Merge branch 'rayan' into 'main'
+[35m|[m[36m\[m  
+[35m|[m * [33m19f3a87[m gestion des images lors de l'impression du pdf
+[35m|[m[35m/[m  
+*   [33mfd4b43a[m Merge branch 'rayan' into 'main'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m8d1dfbe[m gestion click semester 7
+[1;31m|[m[1;31m/[m  
+*   [33m47cd0b6[m Merge branch 'rayan' into 'main'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m254cfe2[m gestion click semester 6
+[1;33m|[m[1;33m/[m  
+*   [33m69d3381[m Merge branch 'rayan' into 'main'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33mb839a45[m gestion click semester 5
+[1;35m|[m[1;35m/[m  
+*   [33m09684ff[m Merge branch 'rayan' into 'main'
+[31m|[m[32m\[m  
+[31m|[m * [33md722730[m gestion click semester 4
+[31m|[m[31m/[m  
+*   [33m3422bd2[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m  
+[33m|[m * [33ma22684d[m gestion click semester 3
+[33m|[m[33m/[m  
+*   [33m2d161e3[m Merge branch 'rayan' into 'main'
+[35m|[m[36m\[m  
+[35m|[m * [33m898ef0c[m gestion click semester 2
+[35m|[m[35m/[m  
+*   [33mf2b67be[m Merge branch 'rayan' into 'main'
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33mc3004ba[m gestion click semester
+[1;31m|[m[1;31m/[m  
+*   [33m60da8ca[m Merge branch 'rayan' into 'main'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m77405db[m gestion des notes et bulletti
+[1;33m|[m[1;33m/[m  
+*   [33m23f7554[m Merge branch 'rayan' into 'main'
+[1;35m|[m[1;36m\[m  
+[1;35m|[m * [33m487466f[m protetion routes etudiant 4
+[1;35m|[m *   [33m136fb56[m protetion routes etudiant 4
+[1;35m|[m [31m|[m[1;35m\[m  
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m   [33m67f062c[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m [31m\[m  
+[33m|[m [34m|[m * [33m722914d[m protetion routes etudiant 4
+[33m|[m [34m|[m[34m/[m  
+[33m|[m *   [33m3acffc5[m protetion routes etudiant 3
+[33m|[m [35m|[m[33m\[m  
+[33m|[m [35m|[m[33m/[m  
+[33m|[m[33m/[m[35m|[m   
+* [35m|[m   [33mfcc962f[m Merge branch 'rayan' into 'main'
+[1;31m|[m[1;32m\[m [35m\[m  
+[1;31m|[m [1;32m|[m * [33m8c88e84[m protetion routes etudiant 3
+[1;31m|[m [1;32m|[m[1;32m/[m  
+[1;31m|[m *   [33m1d8276c[m protetion routes etudiant 2
+[1;31m|[m [1;33m|[m[1;31m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m   
+* [1;33m|[m   [33ma7aca7e[m Merge branch 'rayan' into 'main'
+[1;35m|[m[1;36m\[m [1;33m\[m  
+[1;35m|[m [1;36m|[m * [33m9dc28c0[m protetion routes etudiant 2
+[1;35m|[m [1;36m|[m[1;36m/[m  
+[1;35m|[m *   [33m47c1899[m protection des route dashboard pour etudiant
+[1;35m|[m [31m|[m[1;35m\[m  
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m   [33m6b36433[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m [31m\[m  
+* [34m\[m [31m\[m   [33m389ec1a[m Merge branch 'rayan' into 'main'
+[35m|[m[36m\[m [34m\[m [31m\[m  
+[35m|[m [36m|[m [34m|[m * [33mf75c4a6[m protection des route dashboard pour etudiant
+[35m|[m [36m|[m [34m|[m[34m/[m  
+[35m|[m [36m|[m * [33m0adadc6[m bugs resolu
+[35m|[m [36m|[m[36m/[m  
+[35m|[m *   [33mdb5b6b2[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[35m|[m [1;31m|[m[35m\[m  
+[35m|[m [1;31m|[m[35m/[m  
+[35m|[m[35m/[m[1;31m|[m   
+* [1;31m|[m   [33m6334f8e[m Merge branch 'kinsly' into 'main'
+[1;33m|[m[1;34m\[m [1;31m\[m  
+[1;33m|[m * [1;31m|[m [33md300ff3[m  info page info perso mise a jour
+* [1;34m|[m [1;31m|[m [33m21ea5ed[m Merge branch 'kinsly' into 'main'
+[1;35m|[m[1;34m\[m[1;34m|[m [1;31m|[m 
+[1;35m|[m * [1;31m|[m   [33m5bd4091[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into kinsly
+[1;35m|[m [31m|[m[1;35m\[m [1;31m\[m  
+[1;35m|[m [31m|[m[1;35m/[m [1;31m/[m  
+[1;35m|[m[1;35m/[m[31m|[m [1;31m|[m   
+* [31m|[m [1;31m|[m   [33mc6145da[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m [31m\[m [1;31m\[m  
+[33m|[m [34m|[m * [1;31m|[m [33me496385[m page pour lesinfo individuel de chaque etudiant
+[33m|[m [34m|[m [34m|[m * [33me5b8cb6[m verification du bug de lancement du projet
+[33m|[m [34m|[m [34m|[m * [33mcb0f8a2[m gestion de la modification des chapitres etlecon
+[33m|[m [34m|[m [34m|[m[34m/[m  
+[33m|[m [34m|[m[34m/[m[34m|[m   
+[33m|[m * [34m|[m   [33m7a1b3ec[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[33m|[m [35m|[m[33m\[m [34m\[m  
+[33m|[m [35m|[m[33m/[m [34m/[m  
+[33m|[m[33m/[m[35m|[m [34m|[m   
+* [35m|[m [34m|[m   [33m2fb4b05[m Merge branch 'rayan' into 'main'
+[1;31m|[m[1;32m\[m [35m\[m [34m\[m  
+[1;31m|[m [1;32m|[m * [34m|[m [33m3c0cb89[m gestion de la modification du programme pour courInstance
+[1;31m|[m [1;32m|[m[1;32m/[m [34m/[m  
+[1;31m|[m * [34m|[m   [33m1520dd0[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;31m|[m [1;33m|[m[1;31m\[m [34m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m [34m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m [34m|[m   
+* [1;33m|[m [34m|[m   [33med6fb7d[m Merge branch 'rayan' into 'main'
+[1;35m|[m[1;36m\[m [1;33m\[m [34m\[m  
+[1;35m|[m [1;36m|[m * [34m|[m [33m730bdf4[m modification du nombre de quiz
+[1;35m|[m [1;36m|[m[1;36m/[m [34m/[m  
+[1;35m|[m * [34m|[m   [33m1f54902[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;35m|[m [31m|[m[1;35m\[m [34m\[m  
+[1;35m|[m [31m|[m[1;35m/[m [34m/[m  
+[1;35m|[m[1;35m/[m[31m|[m [34m|[m   
+* [31m|[m [34m|[m   [33mad749d4[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m [31m\[m [34m\[m  
+[33m|[m [34m|[m * [34m|[m [33m89324e9[m modification du nombre de quiz
+[33m|[m [34m|[m[34m/[m [34m/[m  
+[33m|[m * [34m|[m [33m1176098[m ajout de la videp
+[33m|[m * [34m|[m   [33m8d3db35[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[33m|[m [35m|[m[33m\[m [34m\[m  
+[33m|[m [35m|[m[33m/[m [34m/[m  
+[33m|[m[33m/[m[35m|[m [34m|[m   
+* [35m|[m [34m|[m   [33md9eb064[m Merge branch 'kinsly' into 'main'
+[1;31m|[m[34m\[m [35m\[m [34m\[m  
+[1;31m|[m [34m|[m [35m|[m[34m/[m  
+[1;31m|[m [34m|[m[34m/[m[35m|[m   
+[1;31m|[m * [35m|[m [33mfb31342[m  login button clour changed. and restez informer to newsletter
+[1;31m|[m [1;32m|[m * [33mf3641d5[m modification du nombre de quiz
+[1;31m|[m [1;32m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;32m|[m   
+* [1;32m|[m [33m3b784da[m Merge branch 'kinsly' into 'main'
+[1;33m|[m[1;32m\[m[1;32m|[m 
+[1;33m|[m * [33mde59009[m  translation of the admin dashboard and notifications page done
+* [1;34m|[m [33mc71eef5[m Merge branch 'kinsly' into 'main'
+[1;35m|[m[1;34m\[m[1;34m|[m 
+[1;35m|[m *   [33m88eb579[m Merge remote-tracking branch 'origin/main' into kinsly
+[1;35m|[m [31m|[m[1;35m\[m  
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m   [33m276fde6[m Merge branch 'rayan' into 'main'
+[33m|[m[34m\[m [31m\[m  
+[33m|[m * [31m\[m   [33m573c7c8[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[33m|[m [35m|[m[33m\[m [31m\[m  
+[33m|[m [35m|[m[33m/[m [31m/[m  
+[33m|[m[33m/[m[35m|[m [31m|[m   
+* [35m|[m [31m|[m   [33m8c91318[m Merge branch 'kinsly' into 'main'
+[1;31m|[m[1;32m\[m [35m\[m [31m\[m  
+* [1;32m\[m [35m\[m [31m\[m   [33me40929b[m Merge branch 'kinsly' into 'main'
+[1;33m|[m[1;34m\[m [1;32m\[m [35m\[m [31m\[m  
+* [1;34m\[m [1;32m\[m [35m\[m [31m\[m   [33m0b97746[m Merge branch 'rayan' into 'main'
+[1;35m|[m[1;36m\[m [1;34m\[m [1;32m\[m [35m\[m [31m\[m  
+[1;35m|[m [1;36m|[m [1;34m|[m [1;32m|[m * [31m|[m [33m7d3b6e5[m Inscription des etudiants existant
+[1;35m|[m [1;36m|[m [1;34m|[m[1;36m_[m[1;32m|[m[1;36m/[m [31m/[m  
+[1;35m|[m [1;36m|[m[1;36m/[m[1;34m|[m [1;32m|[m [31m|[m   
+[1;35m|[m * [1;34m|[m [1;32m|[m [31m|[m   [33m32b8b9e[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;35m|[m [31m|[m[1;35m\[m [1;34m\[m [1;32m\[m [31m\[m  
+[1;35m|[m [31m|[m[1;35m/[m [1;34m/[m [1;32m/[m [31m/[m  
+[1;35m|[m[1;35m/[m[31m|[m [1;34m|[m [1;32m|[m [31m|[m   
+* [31m|[m [1;34m|[m [1;32m|[m [31m|[m   [33me64ffaf[m Merge branch 'kinsly' into 'main'
+[33m|[m[34m\[m [31m\[m [1;34m\[m [1;32m\[m [31m\[m  
+[33m|[m [34m|[m * [1;34m|[m [1;32m|[m [31m|[m [33mca5d214[m gestion de la photo user
+[33m|[m [34m|[m * [1;34m|[m [1;32m|[m [31m|[m [33mfc67859[m gestion du recu
+[33m|[m [34m|[m[33m/[m [1;34m/[m [1;32m/[m [31m/[m  
+[33m|[m[33m/[m[34m|[m [1;34m|[m [1;32m|[m [31m|[m   
+[33m|[m [34m|[m [1;34m|[m [1;32m|[m * [33m15909c4[m  e-learning frontend translated to french
+[33m|[m [34m|[m [1;34m|[m [1;32m|[m * [33m271be5a[m  notification page design done but with no backend logic
+[33m|[m [34m|[m [1;34m|[m [1;32m|[m * [33maceb485[m  presentation video included abd the footer section redesigned , also completion of the mes cours populaires section
+[33m|[m [34m|[m [1;34m|[m [1;32m|[m[1;32m/[m  
+[33m|[m [34m|[m [1;34m|[m * [33m25253ea[m  affichage des formations a l'acceuil organiser comme a la page des formation
+[33m|[m [34m|[m [1;34m|[m[1;34m/[m  
+[33m|[m [34m|[m * [33mca76564[m  sidebar toggle issue resolved
+[33m|[m [34m|[m[34m/[m  
+[33m|[m * [33m7a3a311[m done for today
+[33m|[m * [33m7a336a0[m  forgot-password and password-reset pages styled
+[33m|[m * [33m77dfb05[m  sidebar scrolling active regulated
+[33m|[m * [33maec073f[m  hoover of the dashboard switching done
+[33m|[m * [33macfe549[m  dashboard redirection and formation on the acceuil done
+[33m|[m[33m/[m  
+*   [33m6de1f44[m Merge branch 'kinsly' into 'main'
+[35m|[m[36m\[m  
+[35m|[m * [33m24d7141[m  dashboard selection and swipping done
+* [36m|[m [33mc52267b[m Merge branch 'kinsly' into 'main'
+[1;31m|[m[36m\[m[36m|[m 
+[1;31m|[m * [33m8b17ce2[m  actualite modal done
+[1;31m|[m[1;31m/[m  
+*   [33m9f3c7ab[m Merge branch 'rayan' into 'main'
+[1;33m|[m[1;34m\[m  
+[1;33m|[m *   [33m3929fba[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;33m|[m [1;35m|[m[1;33m\[m  
+[1;33m|[m [1;35m|[m[1;33m/[m  
+[1;33m|[m[1;33m/[m[1;35m|[m   
+* [1;35m|[m   [33m39c9413[m Merge branch 'rayan' into 'main'
+[31m|[m[32m\[m [1;35m\[m  
+[31m|[m [32m|[m * [33m3eaf4eb[m page users update
+[31m|[m [32m|[m[32m/[m  
+[31m|[m *   [33m9a994a3[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[31m|[m [33m|[m[31m\[m  
+[31m|[m [33m|[m[31m/[m  
+[31m|[m[31m/[m[33m|[m   
+* [33m|[m   [33m4b22015[m Merge branch 'kinsly' into 'main'
+[35m|[m[36m\[m [33m\[m  
+[35m|[m * [33m|[m [33m83ed158[m  details formation , et responsive admin dashboard(e-learning)
+[35m|[m[35m/[m [33m/[m  
+* [33m|[m   [33m35767e5[m Merge branch 'rayan' into 'main'
+[1;31m|[m[1;32m\[m [33m\[m  
+[1;31m|[m [1;32m|[m * [33m9e1bd0f[m page users
+[1;31m|[m [1;32m|[m[1;32m/[m  
+[1;31m|[m *   [33m7962f84[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;31m|[m [1;33m|[m[1;31m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m   
+* [1;33m|[m   [33m9c911de[m Merge branch 'rayan' into 'main'
+[1;35m|[m[1;36m\[m [1;33m\[m  
+[1;35m|[m [1;36m|[m * [33mc6d6408[m google analytics v2
+[1;35m|[m [1;36m|[m[1;36m/[m  
+[1;35m|[m *   [33me75ef19[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;35m|[m [31m|[m[1;35m\[m  
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m   [33m3cb6f71[m Merge branch 'kinsly' into 'main'
+[33m|[m[34m\[m [31m\[m  
+[33m|[m * [31m|[m [33mc77e2aa[m  index events and actualite modals done
+* [34m|[m [31m|[m [33m890f907[m Merge branch 'kinsly' into 'main'
+[35m|[m[34m\[m[34m|[m [31m|[m 
+[35m|[m * [31m|[m [33m03194a1[m  scrolling login butt and hambourger fixed, also e-learning and fiche de preinscription button fixed
+[35m|[m * [31m|[m   [33mb7dcf1c[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into kinsly
+[35m|[m [1;31m|[m[35m\[m [31m\[m  
+[35m|[m [1;31m|[m[35m/[m [31m/[m  
+[35m|[m[35m/[m[1;31m|[m [31m|[m   
+* [1;31m|[m [31m|[m   [33m06436d0[m Merge branch 'rayan' into 'main'
+[1;33m|[m[1;34m\[m [1;31m\[m [31m\[m  
+[1;33m|[m [1;34m|[m * [31m|[m [33m1bd50f4[m  no idea of what changed
+[1;33m|[m [1;34m|[m [1;34m|[m * [33m313ba7d[m google analytics terminer
+[1;33m|[m [1;34m|[m [1;34m|[m[1;34m/[m  
+[1;33m|[m [1;34m|[m[1;34m/[m[1;34m|[m   
+[1;33m|[m * [1;34m|[m   [33m11cbf08[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;33m|[m [1;35m|[m[1;33m\[m [1;34m\[m  
+[1;33m|[m [1;35m|[m[1;33m/[m [1;34m/[m  
+[1;33m|[m[1;33m/[m[1;35m|[m [1;34m|[m   
+* [1;35m|[m [1;34m|[m   [33m8d958c2[m Merge branch 'rayan' into 'main'
+[31m|[m[32m\[m [1;35m\[m [1;34m\[m  
+[31m|[m [32m|[m * [1;34m|[m [33mcc46aa9[m finalisation google analytics
+[31m|[m [32m|[m[32m/[m [1;34m/[m  
+[31m|[m * [1;34m|[m   [33mcd8d74d[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[31m|[m [33m|[m[31m\[m [1;34m\[m  
+[31m|[m [33m|[m[31m/[m [1;34m/[m  
+[31m|[m[31m/[m[33m|[m [1;34m|[m   
+* [33m|[m [1;34m|[m   [33mb8100be[m Merge branch 'rayan' into 'main'
+[35m|[m[36m\[m [33m\[m [1;34m\[m  
+[35m|[m [36m|[m * [1;34m|[m [33m38c0aa4[m modification role et perm
+[35m|[m [36m|[m[36m/[m [1;34m/[m  
+[35m|[m * [1;34m|[m [33mc310a2c[m modification S des controlleur
+[35m|[m * [1;34m|[m   [33m1f238be[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[35m|[m [1;31m|[m[35m\[m [1;34m\[m  
+[35m|[m [1;31m|[m[35m/[m [1;34m/[m  
+[35m|[m[35m/[m[1;31m|[m [1;34m|[m   
+* [1;31m|[m [1;34m|[m   [33maa36603[m Merge branch 'rayan' into 'main'
+[1;33m|[m[1;34m\[m [1;31m\[m [1;34m\[m  
+[1;33m|[m [1;34m|[m * [1;34m|[m [33mcef9fc8[m modification de la vue show formation
+[1;33m|[m [1;34m|[m[1;34m/[m [1;34m/[m  
+[1;33m|[m * [1;34m|[m   [33meeffe9f[m modification de la vue forums
+[1;33m|[m [1;35m|[m[1;33m\[m [1;34m\[m  
+[1;33m|[m [1;35m|[m[1;33m/[m [1;34m/[m  
+[1;33m|[m[1;33m/[m[1;35m|[m [1;34m|[m   
+* [1;35m|[m [1;34m|[m   [33mbfbac92[m Merge branch 'rayan' into 'main'
+[31m|[m[32m\[m [1;35m\[m [1;34m\[m  
+[31m|[m [32m|[m * [1;34m|[m [33ma6f0e6e[m modification de la vue forums
+[31m|[m [32m|[m[32m/[m [1;34m/[m  
+[31m|[m * [1;34m|[m   [33m6c2d84a[m modification du appServiceProviders
+[31m|[m [33m|[m[31m\[m [1;34m\[m  
+[31m|[m [33m|[m[31m/[m [1;34m/[m  
+[31m|[m[31m/[m[33m|[m [1;34m|[m   
+* [33m|[m [1;34m|[m   [33m124cabd[m Merge branch 'rayan' into 'main'
+[35m|[m[36m\[m [33m\[m [1;34m\[m  
+[35m|[m [36m|[m * [1;34m|[m [33meb20236[m modification du appServiceProviders
+[35m|[m [36m|[m[36m/[m [1;34m/[m  
+[35m|[m * [1;34m|[m [33m38aadb7[m style css restant
+[35m|[m * [1;34m|[m   [33mfbb7baf[m Merge branch 'main' of https://gitlab.com/proje####fd53:# the commit.
+[35m|[m [1;31m|[m[35m\[m [1;34m\[m  
+[35m|[m [1;31m|[m[35m/[m [1;34m/[m  
+[35m|[m[35m/[m[1;31m|[m [1;34m|[m   
+* [1;31m|[m [1;34m|[m   [33m581df7c[m Merge branch 'rayan' into 'main'
+[1;33m|[m[1;34m\[m [1;31m\[m [1;34m\[m  
+[1;33m|[m [1;34m|[m * [1;34m|[m [33m70f73ee[m Remove build folder from repository and add to .gitignore
+[1;33m|[m [1;34m|[m[1;34m/[m [1;34m/[m  
+[1;33m|[m * [1;34m|[m   [33mc350213[m google analytics
+[1;33m|[m [1;35m|[m[1;33m\[m [1;34m\[m  
+[1;33m|[m [1;35m|[m[1;33m/[m [1;34m/[m  
+[1;33m|[m[1;33m/[m[1;35m|[m [1;34m|[m   
+* [1;35m|[m [1;34m|[m [33m9d784be[m Initial commit
+[1;36m|[m * [1;34m|[m   [33m613b81e[m Merge branch 'rayan' into 'main'
+[1;36m|[m [31m|[m[32m\[m [1;34m\[m  
+[1;36m|[m [31m|[m * [1;34m\[m   [33m310a5c3[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [31m|[m [33m|[m[31m\[m [1;34m\[m  
+[1;36m|[m [31m|[m [33m|[m[31m/[m [1;34m/[m  
+[1;36m|[m [31m|[m[31m/[m[33m|[m [1;34m|[m   
+[1;36m|[m * [33m|[m [1;34m|[m   [33m0cba9f2[m Merge branch 'rayan' into 'main'
+[1;36m|[m [35m|[m[36m\[m [33m\[m [1;34m\[m  
+[1;36m|[m [35m|[m [36m|[m * [1;34m|[m [33m4a25ef9[m google analytics
+[1;36m|[m [35m|[m [36m|[m[36m/[m [1;34m/[m  
+[1;36m|[m [35m|[m * [1;34m|[m   [33mfa370b1[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [35m|[m [1;31m|[m[35m\[m [1;34m\[m  
+[1;36m|[m [35m|[m [1;31m|[m[35m/[m [1;34m/[m  
+[1;36m|[m [35m|[m[35m/[m[1;31m|[m [1;34m|[m   
+[1;36m|[m * [1;31m|[m [1;34m|[m   [33maf6e4ea[m Merge branch 'rayan' into 'main'
+[1;36m|[m [1;33m|[m[1;34m\[m [1;31m\[m [1;34m\[m  
+[1;36m|[m [1;33m|[m [1;34m|[m * [1;34m|[m [33m273aa6b[m gestion temoignages
+[1;36m|[m [1;33m|[m [1;34m|[m[1;34m/[m [1;34m/[m  
+[1;36m|[m [1;33m|[m * [1;34m|[m [33m98f4221[m gestion de la formation
+[1;36m|[m [1;33m|[m * [1;34m|[m   [33m98fbdd5[m modification de web.php
+[1;36m|[m [1;33m|[m [1;35m|[m[1;33m\[m [1;34m\[m  
+[1;36m|[m [1;33m|[m [1;35m|[m[1;33m/[m [1;34m/[m  
+[1;36m|[m [1;33m|[m[1;33m/[m[1;35m|[m [1;34m|[m   
+[1;36m|[m * [1;35m|[m [1;34m|[m   [33m89cf84a[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [31m|[m[1;34m\[m [1;35m\[m [1;34m\[m  
+[1;36m|[m [31m|[m [1;34m|[m [1;35m|[m[1;34m/[m  
+[1;36m|[m [31m|[m [1;34m|[m[1;34m/[m[1;35m|[m   
+[1;36m|[m [31m|[m * [1;35m|[m   [33md014d01[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into kinsly
+[1;36m|[m [31m|[m [33m|[m[31m\[m [1;35m\[m  
+[1;36m|[m [31m|[m [33m|[m[31m/[m [1;35m/[m  
+[1;36m|[m [31m|[m[31m/[m[33m|[m [1;35m|[m   
+[1;36m|[m [31m|[m * [1;35m|[m [33m9dd1971[m  front formation page filtered
+[1;36m|[m [31m|[m [34m|[m * [33m054a39e[m modification de web.php
+[1;36m|[m [31m|[m [34m|[m[31m/[m  
+[1;36m|[m [31m|[m[31m/[m[34m|[m   
+[1;36m|[m * [34m|[m [33m6ede7d5[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [35m|[m[34m\[m[34m|[m 
+[1;36m|[m [35m|[m * [33mae1e7af[m  first version cool. waiting for modifications
+[1;36m|[m * [36m|[m [33m4e5b71c[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;31m|[m[36m\[m[36m|[m 
+[1;36m|[m [1;31m|[m * [33m596e9e7[m quiz rattrapage done with logic . next thinking on blocking next lessons
+[1;36m|[m * [1;32m|[m [33mea39415[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;33m|[m[1;32m\[m[1;32m|[m 
+[1;36m|[m [1;33m|[m * [33m06dcc32[m  multiple answers for a question
+[1;36m|[m * [1;34m|[m [33m54552f0[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;35m|[m[1;34m\[m[1;34m|[m 
+[1;36m|[m [1;35m|[m * [33m62055ca[m  time loaded from the db , eventhough refresh still restarts timer
+[1;36m|[m [1;35m|[m *   [33m40115cb[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into kinsly
+[1;36m|[m [1;35m|[m [31m|[m[1;35m\[m  
+[1;36m|[m [1;35m|[m [31m|[m[1;35m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[31m|[m   
+[1;36m|[m * [31m|[m   [33m9f4d895[m Merge branch 'rayan' into 'main'
+[1;36m|[m [33m|[m[34m\[m [31m\[m  
+[1;36m|[m [33m|[m * [31m|[m [33mcbfb10e[m gestion du temps d'un quiz
+[1;36m|[m [33m|[m * [31m|[m   [33mc432909[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [33m|[m [35m|[m[33m\[m [31m\[m  
+[1;36m|[m [33m|[m [35m|[m[33m/[m [31m/[m  
+[1;36m|[m [33m|[m[33m/[m[35m|[m [31m|[m   
+[1;36m|[m * [35m|[m [31m|[m   [33mbbb3c9e[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;31m|[m[1;32m\[m [35m\[m [31m\[m  
+[1;36m|[m [1;31m|[m [1;32m|[m * [31m\[m   [33ma582016[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;31m|[m [1;32m|[m [1;33m|[m[1;31m\[m [31m\[m  
+[1;36m|[m [1;31m|[m [1;32m|[m[1;31m_[m[1;33m|[m[1;31m/[m [31m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;32m|[m [1;33m|[m [31m|[m   
+[1;36m|[m * [1;32m|[m [1;33m|[m [31m|[m   [33mcefa6ed[m Merge branch 'rayan' into 'main'
+[1;36m|[m [1;35m|[m[1;36m\[m [1;32m\[m [1;33m\[m [31m\[m  
+[1;36m|[m [1;35m|[m [1;36m|[m [1;32m|[m * [31m|[m [33m87b3987[m ajout du fichier only a la racine
+[1;36m|[m [1;35m|[m [1;36m|[m [1;32m|[m[1;36m/[m [31m/[m  
+[1;36m|[m [1;35m|[m [1;36m|[m[1;36m/[m[1;32m|[m [31m|[m   
+[1;36m|[m [1;35m|[m * [1;32m|[m [31m|[m [33mee020ac[m ajout du fichier only a la racine
+[1;36m|[m [1;35m|[m[1;35m/[m [1;32m/[m [31m/[m  
+[1;36m|[m * [1;32m|[m [31m|[m   [33m3f7638a[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [31m|[m[32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m * [32m\[m [1;32m\[m [31m\[m   [33mc5e18b5[m Merge branch 'rayan' into 'main'
+[1;36m|[m [33m|[m[34m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [33m|[m * [32m\[m [1;32m\[m [31m\[m   [33m9ff0714[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [33m|[m [35m|[m[33m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [33m|[m [35m|[m[33m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [33m|[m[33m/[m[35m|[m [32m|[m [1;32m|[m [31m|[m   
+[1;36m|[m * [35m|[m [32m|[m [1;32m|[m [31m|[m   [33m5dd9a69[m Merge branch 'rayan' into 'main'
+[1;36m|[m [1;31m|[m[1;32m\[m [35m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [1;31m|[m [1;32m|[m * [32m|[m [1;32m|[m [31m|[m [33m2715fc4[m modification du fichier bootstrap/app uniquement
+[1;36m|[m [1;31m|[m [1;32m|[m[1;32m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [1;31m|[m * [32m|[m [1;32m|[m [31m|[m   [33m0b99e1f[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;31m|[m [1;33m|[m[1;31m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [1;31m|[m [1;33m|[m[1;31m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;33m|[m [32m|[m [1;32m|[m [31m|[m   
+[1;36m|[m * [1;33m|[m [32m|[m [1;32m|[m [31m|[m   [33m2e66b79[m Merge branch 'rayan' into 'main'
+[1;36m|[m [1;35m|[m[1;36m\[m [1;33m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [1;35m|[m [1;36m|[m * [32m|[m [1;32m|[m [31m|[m [33mcdf7b1b[m FIX: Force public path binding in AppServiceProvider
+[1;36m|[m [1;35m|[m [1;36m|[m[1;36m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [1;35m|[m * [32m|[m [1;32m|[m [31m|[m   [33mcb873f6[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;35m|[m [31m|[m[1;35m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [1;35m|[m [31m|[m[1;35m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[31m|[m [32m|[m [1;32m|[m [31m|[m   
+[1;36m|[m * [31m|[m [32m|[m [1;32m|[m [31m|[m   [33m15fd691[m Merge branch 'rayan' into 'main'
+[1;36m|[m [33m|[m[34m\[m [31m\[m [32m\[m [1;32m\[m [31m\[m  
+[1;36m|[m [33m|[m [34m|[m * [32m|[m [1;32m|[m [31m|[m [33m5657ca2[m FIX: Set correct public path for shared hosting
+[1;36m|[m [33m|[m [34m|[m[34m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [33m|[m * [32m/[m [1;32m/[m [31m/[m [33m543cf5c[m CHORE: Add compiled production assets for deployment
+[1;36m|[m [33m|[m[33m/[m [32m/[m [1;32m/[m [31m/[m  
+[1;36m|[m [33m|[m [32m|[m [1;32m|[m * [33ma379596[m  latest changes, style of the courses page
+[1;36m|[m [33m|[m [32m|[m [1;32m|[m[1;32m/[m  
+[1;36m|[m [33m|[m [32m|[m * [33m4b6a282[m  view for coures with tw
+[1;36m|[m [33m|[m [32m|[m[32m/[m  
+[1;36m|[m [33m|[m * [33mdb1a7e3[m[33m ([m[1;31morigin/kinsly[m[33m)[m waiting for chapter quizes
+[1;36m|[m [33m|[m * [33md46f933[m preview partially working but obliges clicing the download button
+[1;36m|[m [33m|[m * [33mcc7d73f[m  courses loaded
+[1;36m|[m [33m|[m *   [33m0aeeeba[m "Added email contact form route and controller in web.php"
+[1;36m|[m [33m|[m [35m|[m[33m\[m  
+[1;36m|[m [33m|[m [35m|[m[33m/[m  
+[1;36m|[m [33m|[m[33m/[m[35m|[m   
+[1;36m|[m * [35m|[m   [33mc9b91a8[m Merge branch 'rayan' into 'main'
+[1;36m|[m [1;31m|[m[1;32m\[m [35m\[m  
+[1;36m|[m [1;31m|[m * [35m\[m   [33m28b6288[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;31m|[m [1;33m|[m[1;31m\[m [35m\[m  
+[1;36m|[m [1;31m|[m [1;33m|[m[1;31m/[m [35m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;33m|[m [35m|[m   
+[1;36m|[m * [1;33m|[m [35m|[m   [33m9dee2b5[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;35m|[m[1;36m\[m [1;33m\[m [35m\[m  
+[1;36m|[m [1;35m|[m [1;36m|[m * [35m|[m [33m2546ee7[m gestion admin jusqua la logiue quiz
+[1;36m|[m [1;35m|[m [1;36m|[m * [35m|[m [33m476ac8b[m nouvelle version de la bd
+[1;36m|[m [1;35m|[m [1;36m|[m * [35m|[m   [33m96e2302[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;35m|[m [1;36m|[m [31m|[m[1;35m\[m [35m\[m  
+[1;36m|[m [1;35m|[m [1;36m|[m[1;35m_[m[31m|[m[1;35m/[m [35m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[1;36m|[m [31m|[m [35m|[m   
+[1;36m|[m * [1;36m|[m [31m|[m [35m|[m   [33m4ead424[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [33m|[m[34m\[m [1;36m\[m [31m\[m [35m\[m  
+[1;36m|[m * [34m\[m [1;36m\[m [31m\[m [35m\[m   [33m87b689a[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [35m|[m[36m\[m [34m\[m [1;36m\[m [31m\[m [35m\[m  
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m * [35m|[m [33m6f4183d[m Interface etudiant
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m * [35m|[m   [33m1e91392[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m [1;31m|[m[35m\[m [35m\[m  
+[1;36m|[m [35m|[m [36m|[m[35m_[m[34m|[m[35m_[m[1;36m|[m[35m_[m[1;31m|[m[35m/[m [35m/[m  
+[1;36m|[m [35m|[m[35m/[m[36m|[m [34m|[m [1;36m|[m [1;31m|[m [35m|[m   
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m * [35m|[m [33mb941cc1[m Tables de messagerie personnel
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m [1;32m|[m * [33m3e8397f[m  css separated
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m [1;32m|[m[1;36m/[m  
+[1;36m|[m [35m|[m [36m|[m [34m|[m [1;36m|[m[1;36m/[m[1;32m|[m   
+[1;36m|[m [35m|[m [36m|[m [34m|[m * [1;32m|[m [33m84992f2[m navbar unread messages done
+[1;36m|[m [35m|[m [36m|[m [34m|[m[34m/[m [1;32m/[m  
+[1;36m|[m [35m|[m [36m|[m * [1;32m/[m [33m11dbb71[m unread messages style changed
+[1;36m|[m [35m|[m [36m|[m[36m/[m [1;32m/[m  
+[1;36m|[m [35m|[m * [1;32m/[m [33m043d1e7[m private chat and unread messages
+[1;36m|[m [35m|[m[35m/[m [1;32m/[m  
+[1;36m|[m * [1;32m|[m   [33md9872bd[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;33m|[m[1;34m\[m [1;32m\[m  
+[1;36m|[m [1;33m|[m * [1;32m\[m   [33mdec8f0a[m conflicts resolved . mail form handled
+[1;36m|[m [1;33m|[m [1;35m|[m[1;33m\[m [1;32m\[m  
+[1;36m|[m [1;33m|[m [1;35m|[m[1;33m/[m [1;32m/[m  
+[1;36m|[m [1;33m|[m[1;33m/[m[1;35m|[m [1;32m|[m   
+[1;36m|[m * [1;35m|[m [1;32m|[m   [33m21fb46c[m Merge branch 'rayan' into 'main'
+[1;36m|[m [31m|[m[1;32m\[m [1;35m\[m [1;32m\[m  
+[1;36m|[m [31m|[m [1;32m|[m [1;35m|[m[1;32m/[m  
+[1;36m|[m [31m|[m [1;32m|[m[1;32m/[m[1;35m|[m   
+[1;36m|[m [31m|[m * [1;35m|[m [33mc3401fa[m Tables de messagerie personnel
+[1;36m|[m [31m|[m * [1;35m|[m   [33m196db6a[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [31m|[m [33m|[m[31m\[m [1;35m\[m  
+[1;36m|[m [31m|[m [33m|[m[31m/[m [1;35m/[m  
+[1;36m|[m [31m|[m[31m/[m[33m|[m [1;35m|[m   
+[1;36m|[m * [33m|[m [1;35m|[m   [33m29bbe1c[m Merge branch 'laurince' into 'main'
+[1;36m|[m [35m|[m[36m\[m [33m\[m [1;35m\[m  
+[1;36m|[m * [36m\[m [33m\[m [1;35m\[m   [33m1cfaf46[m Merge branch 'laurince' into 'main'
+[1;36m|[m [1;31m|[m[1;32m\[m [36m\[m [33m\[m [1;35m\[m  
+[1;36m|[m [1;31m|[m [1;32m|[m [36m|[m * [1;35m\[m   [33macb286e[m Gestion du recu de paiement de l'inscription
+[1;36m|[m [1;31m|[m [1;32m|[m [36m|[m [1;33m|[m[1;31m\[m [1;35m\[m  
+[1;36m|[m [1;31m|[m [1;32m|[m[1;31m_[m[36m|[m[1;31m_[m[1;33m|[m[1;31m/[m [1;35m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;32m|[m [36m|[m [1;33m|[m [1;35m|[m   
+[1;36m|[m [1;31m|[m [1;32m|[m [36m|[m * [1;35m|[m [33m3352a18[m pouss des premiere table du collaborateu B
+[1;36m|[m [1;31m|[m [1;32m|[m [36m|[m [1;34m|[m * [33m5897df8[m email form functional
+[1;36m|[m [1;31m|[m [1;32m|[m [36m|[m [1;34m|[m[36m/[m  
+[1;36m|[m [1;31m|[m [1;32m|[m [36m|[m[36m/[m[1;34m|[m   
+[1;36m|[m [1;31m|[m [1;32m|[m * [1;34m|[m [33mbe74e3c[m  role for  student, routes protected,post deletion, mail sendind with mailer
+[1;36m|[m [1;31m|[m [1;32m|[m[1;32m/[m [1;34m/[m  
+[1;36m|[m [1;31m|[m * [1;34m/[m [33mceea586[m admin routes protected
+[1;36m|[m [1;31m|[m[1;31m/[m [1;34m/[m  
+[1;36m|[m * [1;34m|[m   [33mb349b20[m Merge branch 'laurince' into 'main'
+[1;36m|[m [1;35m|[m[1;36m\[m [1;34m\[m  
+[1;36m|[m [1;35m|[m * [1;34m|[m [33m889a5d3[m forum styling improved
+[1;36m|[m * [1;36m|[m [1;34m|[m [33mb5c60ae[m Merge branch 'laurince' into 'main'
+[1;36m|[m [1;34m|[m[1;36m\[m[1;36m|[m [1;34m|[m 
+[1;36m|[m [1;34m|[m [1;36m|[m[1;34m/[m  
+[1;36m|[m [1;34m|[m[1;34m/[m[1;36m|[m   
+[1;36m|[m [1;34m|[m * [33m1e7d0de[m forum with ajax working
+[1;36m|[m * [32m|[m [33mfc50de0[m Merge branch 'laurince' into 'main'
+[1;36m|[m [33m|[m[32m\[m[32m|[m 
+[1;36m|[m [33m|[m * [33m808b856[m forum pour l'etudiant
+[1;36m|[m [33m|[m[33m/[m  
+[1;36m|[m *   [33m8569fff[m Merge branch 'rayan' into 'main'
+[1;36m|[m [35m|[m[36m\[m  
+[1;36m|[m [35m|[m *   [33md79a290[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [35m|[m [1;31m|[m[35m\[m  
+[1;36m|[m [35m|[m [1;31m|[m[35m/[m  
+[1;36m|[m [35m|[m[35m/[m[1;31m|[m   
+[1;36m|[m * [1;31m|[m   [33maccebea[m Merge branch 'laurince' into 'main'
+[1;36m|[m [1;33m|[m[1;34m\[m [1;31m\[m  
+[1;36m|[m [1;33m|[m * [1;31m|[m [33m14e773b[m corrected
+[1;36m|[m * [1;34m|[m [1;31m|[m [33m6a148c9[m Merge branch 'laurince' into 'main'
+[1;36m|[m [1;35m|[m[1;34m\[m[1;34m|[m [1;31m|[m 
+[1;36m|[m [1;35m|[m * [1;31m|[m [33m600c904[m  learning dashboard front office static
+[1;36m|[m [1;35m|[m[1;35m/[m [1;31m/[m  
+[1;36m|[m [1;35m|[m * [33mf80c9f8[m pouss des premiere table du collaborateu B
+[1;36m|[m [1;35m|[m * [33meb5abc6[m pouss des premiere table du collaborateu B
+[1;36m|[m [1;35m|[m *   [33m5eac967[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;35m|[m [31m|[m[1;35m\[m  
+[1;36m|[m [1;35m|[m [31m|[m[1;35m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[31m|[m   
+[1;36m|[m * [31m|[m   [33m6d5e6f7[m Merge branch 'laurince' into 'main'
+[1;36m|[m [33m|[m[34m\[m [31m\[m  
+[1;36m|[m [33m|[m * [31m|[m [33mf81a881[m profile modified and the etudiant dashboard started
+[1;36m|[m [33m|[m[33m/[m [31m/[m  
+[1;36m|[m * [31m|[m   [33mcef187f[m Merge branch 'laurince' into 'main'
+[1;36m|[m [35m|[m[36m\[m [31m\[m  
+[1;36m|[m [35m|[m * [31m|[m [33m539beba[m sidebar and navbar html template removed
+[1;36m|[m [35m|[m[35m/[m [31m/[m  
+[1;36m|[m [35m|[m *   [33m7cd4d25[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [35m|[m [1;31m|[m[35m\[m  
+[1;36m|[m [35m|[m [1;31m|[m[35m/[m  
+[1;36m|[m [35m|[m[35m/[m[1;31m|[m   
+[1;36m|[m * [1;31m|[m   [33m216816c[m Merge branch 'laurince' into 'main'
+[1;36m|[m [1;33m|[m[1;34m\[m [1;31m\[m  
+[1;36m|[m [1;33m|[m * [1;31m|[m [33mdf012c9[m  modifications on all frnt pages exept the home
+[1;36m|[m [1;33m|[m [1;34m|[m * [33m53f5276[m init de formation
+[1;36m|[m [1;33m|[m [1;34m|[m *   [33m08c2d84[m Merge branch 'main' of https://gitlab.com/projets-sir-tech/siteweb3ia into rayan
+[1;36m|[m [1;33m|[m [1;34m|[m [1;35m|[m[1;33m\[m  
+[1;36m|[m [1;33m|[m [1;34m|[m[1;33m_[m[1;35m|[m[1;33m/[m  
+[1;36m|[m [1;33m|[m[1;33m/[m[1;34m|[m [1;35m|[m   
+[1;36m|[m * [1;34m|[m [1;35m|[m [33mb92d9d0[m Merge branch 'laurince' into 'main'
+[1;36m|[m [31m|[m[1;34m\[m[1;34m|[m [1;35m|[m 
+[1;36m|[m [31m|[m * [1;35m|[m [33maf4f365[m null values handled
+[1;36m|[m [31m|[m [32m|[m * [33m579ce9e[m actualiteR
+[1;36m|[m [31m|[m [32m|[m[31m/[m  
+[1;36m|[m [31m|[m[31m/[m[32m|[m   
+[1;36m|[m * [32m|[m [33m6e44640[m Merge branch 'laurince' into 'main'
+[1;36m|[m [33m|[m[32m\[m[32m|[m 
+[1;36m|[m [33m|[m * [33m74f4814[m actualite
+[1;36m|[m * [34m|[m [33m8dfa4bf[m Merge branch 'laurince' into 'main'
+[1;36m|[m [35m|[m[34m\[m[34m|[m 
+[1;36m|[m [35m|[m * [33mdea6da0[m actualite migration fixed
+[1;36m|[m [35m|[m[35m/[m  
+[1;36m|[m *   [33m71dd64b[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;31m|[m[1;32m\[m  
+[1;36m|[m [1;31m|[m * [33m3e14f92[m  waiting for confirmation(but integrated front and back office)
+[1;36m|[m [1;31m|[m[1;31m/[m  
+[1;36m|[m *   [33md8c9248[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;33m|[m[1;34m\[m  
+[1;36m|[m [1;33m|[m * [33m6a269d3[m front office integration started, acceuil and actualites pages donne
+[1;36m|[m [1;33m|[m * [33m1ebc6f4[m admin sidebar fixed
+[1;36m|[m [1;33m|[m[1;33m/[m  
+[1;36m|[m *   [33m4dccd2c[m Merge branch 'kinsly' into 'main'
+[1;36m|[m [1;35m|[m[1;36m\[m  
+[1;36m|[m [1;35m|[m * [33m0c3c514[m website admin dashboard done (according to me )
+[1;36m|[m [1;35m|[m[1;35m/[m  
+[1;36m|[m * [33mde08053[m Merge branch 'kinsly' into 'main'
+[1;36m|[m[1;36m/[m[32m|[m 
+[1;36m|[m * [33m8507535[m second push
+[1;36m|[m * [33m9697f34[m first push
+[1;36m|[m[1;36m/[m  
+* [33m0cc17f9[m Initial commit

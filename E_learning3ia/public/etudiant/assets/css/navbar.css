@@ -1,0 +1,238 @@
+/* Base Navbar Styles */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backup-filter: blur(20px);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Container */
+.logo-container {
+    flex-shrink: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    position: relative;
+    color: #374151;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #1a3a94;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #1a3a94;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backup-filter: blur(20px);
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 40;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu.open {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-container {
+    padding: 1.5rem 1rem;
+}
+
+.mobile-nav-link {
+    color: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+    padding: 14px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    background: rgba(30, 58, 138, 0.3);
+    min-height: 48px;
+    position: relative;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(59, 130, 246, 0.4);
+    transform: translateX(4px);
+}
+
+.active-mobile-link {
+    background: rgba(96, 165, 250, 0.3);
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Notification Badges */
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.mobile-notification-badge {
+    position: static;
+    margin-left: auto;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* User Profile */
+.user-avatar {
+    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #1a3a94 0%, #2563eb 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburger Menu - Fixed */
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    z-index: 100;
+    position: relative;
+    overflow: visible !important;
+}
+
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: #1e40af;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+    border-radius: 2px;
+    display: block;
+    overflow: visible !important;
+}
+
+.hamburger span:last-child {
+    margin-bottom: 0;
+}
+
+/* transform into X when open */
+.hamburger.open span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* change color when open */
+.hamburger.open span {
+    background: #1e40af;
+}
+
+/* CTA Button */
+.cta-button {
+    background: #1a3a94;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #172554;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure hamburger stays visible on mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-nav-link {
+        position: relative;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}

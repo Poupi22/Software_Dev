@@ -1,0 +1,120 @@
+
+    /* Base Styles */
+    .main-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    
+    .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    .card-body {
+        padding: 2rem;
+    }
+    
+    .form-label {
+        font-weight: 500;
+        color: #475569;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        padding: 0.75rem 1rem;
+    }
+    
+    .form-control:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.25rem rgba(147, 197, 253, 0.25);
+    }
+    
+    textarea.form-control {
+        min-height: 150px;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+    
+    .btn-secondary {
+        background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        color: #475569;
+        font-weight: 500;
+    }
+    
+    /* Layout Adjustments */
+    .main-content {
+        margin-left: 250px;
+        transition: all 0.3s;
+    }
+
+    @media (max-width: 1199.98px) {
+        .main-content {
+            margin-left: 0;
+            padding-top: 70px;
+        }
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 991.98px) {
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .main-header h1 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 767.98px) {
+        .card-body {
+            padding: 1rem;
+        }
+        
+        .main-header h1 {
+            font-size: 1.3rem;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+    }
+    
+    @media (max-width: 575.98px) {
+        .container {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+        
+        .card-body {
+            padding: 0.75rem;
+        }
+        
+        .main-header h1 {
+            font-size: 1.2rem;
+        }
+        
+        .d-flex.justify-content-end {
+            justify-content: center !important;
+        }
+        
+        .btn {
+            width: 100%;
+        }
+    }
