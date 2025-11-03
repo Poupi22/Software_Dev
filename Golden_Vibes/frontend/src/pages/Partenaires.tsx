@@ -1,0 +1,648 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink, Star, Award, Sparkles, Handshake, Send,
+  CheckCircle, Mail, Phone, AlertCircle, Loader2, ChevronDown,
+  Globe, RefreshCw
+} from "lucide-react";
+
+import { API_URL, getImageUrl } from "@/services/api"; // ✅
+
+// ─── Types ──────────────────────────────────────────────────────────────────
+type Categorie = "platine" | "or" | "argent" | "bronze";
+
+interface Partner {
+  id: number;
+  nom: string;
+  logo: string;
+  categorie: Categorie;
+  description: string;
+  site_web?: string;
+  email?: string;
+  telephone?: string;
+  statut: "actif";
+  ordre: number;
+}
+
+const categoryOrder: Categorie[] = ["platine", "or", "argent", "bronze"];
+
+const categoryConfig: Record<Categorie, {
+  icon: React.ReactNode;
+  emoji: string;
+  label: string;
+  gradient: string;
+  border: string;
+  badge: string;
+  glow: string;
+}> = {
+  platine: {
+    icon: <Sparkles className="w-4 h-4" />,
+    emoji: "💎",
+    label: "Platine",
+    gradient: "from-[#e5e4e2]/10 via-transparent to-transparent",
+    border: "border-[#e5e4e2]/20 hover:border-[#e5e4e2]/50",
+    badge: "bg-[#e5e4e2]/15 text-[#d4d3d1] ring-1 ring-[#e5e4e2]/30",
+    glow: "hover:shadow-[0_0_40px_rgba(229,228,226,0.12)]",
+  },
+  or: {
+    icon: <Award className="w-4 h-4" />,
+    emoji: "🥇",
+    label: "Or",
+    gradient: "from-amber-400/10 via-transparent to-transparent",
+    border: "border-amber-400/20 hover:border-amber-400/50",
+    badge: "bg-amber-400/15 text-amber-300 ring-1 ring-amber-400/30",
+    glow: "hover:shadow-[0_0_40px_rgba(251,191,36,0.12)]",
+  },
+  argent: {
+    icon: <Star className="w-4 h-4" />,
+    emoji: "🥈",
+    label: "Argent",
+    gradient: "from-slate-400/10 via-transparent to-transparent",
+    border: "border-slate-400/20 hover:border-slate-400/50",
+    badge: "bg-slate-400/15 text-slate-300 ring-1 ring-slate-400/30",
+    glow: "hover:shadow-[0_0_40px_rgba(148,163,184,0.12)]",
+  },
+  bronze: {
+    icon: <Star className="w-4 h-4" />,
+    emoji: "🥉",
+    label: "Bronze",
+    gradient: "from-orange-700/10 via-transparent to-transparent",
+    border: "border-orange-700/20 hover:border-orange-700/50",
+    badge: "bg-orange-700/15 text-orange-400 ring-1 ring-orange-700/30",
+    glow: "hover:shadow-[0_0_40px_rgba(194,120,64,0.12)]",
+  },
+};
+
+const getCfg = (cat: string) => categoryConfig[cat as Categorie] ?? categoryConfig.bronze;
+
+const advantages = [
+  { title: "Visibilité Premium", desc: "Votre logo sur tous nos supports de communication et événements.", emoji: "📣" },
+  { title: "Réseau Exclusif",    desc: "Accès à un réseau de professionnels et d'influenceurs.",          emoji: "🤝" },
+  { title: "Événements VIP",     desc: "Invitations exclusives à nos soirées et événements privés.",       emoji: "🎟️" },
+  { title: "Retombées Médias",   desc: "Couverture presse et réseaux sociaux de grande envergure.",        emoji: "📰" },
+];
+
+const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
+const fadeUp  = {
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+};
+const scaleIn = {
+  hidden:  { opacity: 0, scale: 0.92 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+};
+
+// ─── Hook API ─────────────────────────────────────────────────────────────────
+function usePartners() {
+  const [partners, setPartners] = useState<Partner[]>([]);
+  const [loading, setLoading]   = useState(true);
+  const [error, setError]       = useState<string | null>(null);
+
+  const load = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(`${API_URL}/partenaires`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      if (!json.success) throw new Error("Réponse API invalide");
+      const data: Partner[] = (json.data as Partner[]).map(p => ({
+        ...p,
+        categorie: (p.categorie ?? "").toLowerCase() as Categorie,
+      }));
+      setPartners(data);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Erreur inconnue");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => { load(); }, []);
+  return { partners, loading, error, reload: load };
+}
+
+// ─── Skeleton ─────────────────────────────────────────────────────────────────
+const PartnerSkeleton = () => (
+  <div className="rounded-2xl border border-white/5 bg-white/3 p-6 animate-pulse">
+    <div className="w-24 h-24 mx-auto rounded-xl bg-white/5 mb-4" />
+    <div className="h-4 bg-white/5 rounded w-2/3 mx-auto mb-2" />
+    <div className="h-3 bg-white/5 rounded w-full mb-1" />
+    <div className="h-3 bg-white/5 rounded w-5/6 mx-auto" />
+  </div>
+);
+
+// ─── Card Partenaire ──────────────────────────────────────────────────────────
+const PartnerCard = ({ p, platinum = false }: { p: Partner; platinum?: boolean }) => {
+  const cfg = getCfg(p.categorie);
+  const [imgErr, setImgErr] = useState(false);
+  const logoUrl = getImageUrl(p.logo); // ✅
+
+  return (
+    <motion.article
+      variants={fadeUp}
+      whileHover={{ y: -6, transition: { type: "spring", stiffness: 300 } }}
+      className={`group relative rounded-2xl border ${cfg.border} ${cfg.glow}
+        bg-gradient-to-br ${cfg.gradient} bg-[rgba(255,255,255,0.03)]
+        backdrop-blur-sm p-6 transition-all duration-300
+        ${platinum ? "md:flex md:items-start md:gap-10 md:p-10" : ""}`}
+    >
+      {/* Badge catégorie */}
+      <div className={`absolute top-4 right-4 flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full ${cfg.badge}`}>
+        {cfg.icon} {cfg.label}
+      </div>
+
+      {/* Logo */}
+      <div className={`flex items-center justify-center rounded-xl bg-white/5 overflow-hidden
+        ${platinum ? "w-40 h-40 flex-shrink-0" : "w-28 h-28 mx-auto mb-5"}`}>
+        {logoUrl && !imgErr ? (
+          <img
+            src={logoUrl}
+            alt={`Logo ${p.nom}`}
+            className="w-full h-full object-contain p-3"
+            onError={() => setImgErr(true)}
+          />
+        ) : (
+          <span className="text-4xl">{cfg.emoji}</span>
+        )}
+      </div>
+
+      {/* Contenu */}
+      <div className={platinum ? "flex-1 pt-1" : "text-center"}>
+        <h3
+          className={`font-bold tracking-tight mb-2 ${platinum ? "text-2xl" : "text-lg"}`}
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          {p.nom}
+        </h3>
+        <p className="text-sm text-white/50 mb-4 leading-relaxed">{p.description}</p>
+
+        {(p.email || p.telephone) && (
+          <div className="border-t border-white/5 pt-3 mb-4 space-y-1.5">
+            {p.email && (
+              <a href={`mailto:${p.email}`}
+                 className={`flex items-center gap-1.5 text-xs text-white/40 hover:text-amber-300 transition-colors ${platinum ? "" : "justify-center"}`}>
+                <Mail className="w-3 h-3" /> {p.email}
+              </a>
+            )}
+            {p.telephone && (
+              <a href={`tel:${p.telephone}`}
+                 className={`flex items-center gap-1.5 text-xs text-white/40 hover:text-amber-300 transition-colors ${platinum ? "" : "justify-center"}`}>
+                <Phone className="w-3 h-3" /> {p.telephone}
+              </a>
+            )}
+          </div>
+        )}
+
+        {p.site_web && p.site_web !== "" ? (
+          <a href={p.site_web} target="_blank" rel="noopener noreferrer"
+             className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold text-xs py-2 px-4 rounded-lg transition-all hover:brightness-110 hover:shadow-lg hover:shadow-amber-400/25">
+            <Globe className="w-3.5 h-3.5" /> Visiter le site
+          </a>
+        ) : (
+          <span className="inline-flex items-center gap-2 text-white/20 text-xs py-2 px-4 rounded-lg border border-white/5 cursor-not-allowed">
+            <ExternalLink className="w-3.5 h-3.5" /> Site non disponible
+          </span>
+        )}
+      </div>
+    </motion.article>
+  );
+};
+
+// ─── Filtre ───────────────────────────────────────────────────────────────────
+type FilterValue = Categorie | "tous";
+
+const FilterBar = ({ active, onChange }: { active: FilterValue; onChange: (v: FilterValue) => void }) => (
+  <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+    {(["tous", ...categoryOrder] as FilterValue[]).map(t => {
+      const cfg = t !== "tous" ? getCfg(t) : null;
+      return (
+        <button key={t} onClick={() => onChange(t)}
+          className={`text-sm font-semibold px-4 py-1.5 rounded-full border transition-all ${
+            active === t
+              ? "bg-amber-400 text-black border-amber-400"
+              : "border-white/10 text-white/50 hover:border-white/30 hover:text-white/80"
+          }`}>
+          {t === "tous" ? "Tous" : `${cfg!.emoji} ${cfg!.label}`}
+        </button>
+      );
+    })}
+  </div>
+);
+
+// ─── Formulaire de demande de partenariat ─────────────────────────────────────
+interface PartenaireFormState {
+  nom_entreprise: string;
+  nom_contact:   string;
+  email:         string;
+  telephone:     string;
+  message:       string;
+}
+
+const defaultForm: PartenaireFormState = {
+  nom_entreprise: "",
+  nom_contact:   "",
+  email:         "",
+  telephone:     "",
+  message:       "",
+};
+
+const ContactForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending]     = useState(false);
+  const [error, setError]         = useState<string | null>(null);
+  const [form, setForm]           = useState<PartenaireFormState>(defaultForm);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setError(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError(null);
+
+    try {
+      const payload = {
+        nom:       form.nom_entreprise.trim(),
+        email:     form.email.trim(),
+        telephone: form.telephone.trim(),
+        objet:     "partenariat",
+        message:   [
+          form.nom_contact.trim() ? `Contact : ${form.nom_contact.trim()}` : "",
+          form.message.trim(),
+        ].filter(Boolean).join("\n\n"),
+      };
+
+      const res = await fetch(`${API_URL}/contact`, {
+        method:  "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body:    JSON.stringify(payload),
+      });
+
+      const json = await res.json();
+
+      if (!res.ok) {
+        if (json.errors) {
+          const first = Object.values(json.errors as Record<string, string[]>)[0][0];
+          throw new Error(first);
+        }
+        throw new Error(json.message ?? `Erreur ${res.status}`);
+      }
+
+      setSubmitted(true);
+      setForm(defaultForm);
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue.");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const inputClass =
+    "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-amber-400/40 focus:border-amber-400/40 transition-all text-sm";
+
+  if (submitted) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="flex flex-col items-center justify-center py-10 text-center gap-4"
+      >
+        <div className="w-16 h-16 rounded-full bg-amber-400/15 border border-amber-400/30 flex items-center justify-center">
+          <CheckCircle className="w-7 h-7 text-amber-300" />
+        </div>
+        <div>
+          <p className="font-bold text-lg text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
+            Demande envoyée !
+          </p>
+          <p className="text-white/40 text-sm mt-1">
+            Notre équipe vous contactera dans les plus brefs délais.
+          </p>
+        </div>
+        <button
+          onClick={() => setSubmitted(false)}
+          className="text-xs text-amber-300/60 hover:text-amber-300 underline underline-offset-2 transition-colors"
+        >
+          Envoyer une autre demande
+        </button>
+      </motion.div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+            Entreprise *
+          </label>
+          <input type="text" name="nom_entreprise" required value={form.nom_entreprise}
+            onChange={handleChange} className={inputClass} placeholder="Nom de votre entreprise" />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+            Nom du contact *
+          </label>
+          <input type="text" name="nom_contact" required value={form.nom_contact}
+            onChange={handleChange} className={inputClass} placeholder="Votre nom complet" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+            Email *
+          </label>
+          <input type="email" name="email" required value={form.email}
+            onChange={handleChange} className={inputClass} placeholder="votre@email.com" />
+        </div>
+        <div>
+          <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+            Téléphone
+          </label>
+          <input type="tel" name="telephone" value={form.telephone}
+            onChange={handleChange} className={inputClass} placeholder="+237 XX XX XX XX" />
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-xs font-semibold text-white/50 mb-1.5 uppercase tracking-wider">
+          Message *
+        </label>
+        <textarea name="message" required rows={4} value={form.message}
+          onChange={handleChange} className={`${inputClass} resize-none`}
+          placeholder="Parlez-nous de votre entreprise et de vos objectifs de partenariat…" />
+      </div>
+
+      <AnimatePresence>
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+            className="flex items-center gap-2 text-sm text-red-400 bg-red-400/10 border border-red-400/20 rounded-xl px-4 py-3"
+          >
+            <AlertCircle className="w-4 h-4 shrink-0" />
+            {error}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.button
+        type="submit" disabled={sending}
+        whileHover={!sending ? { scale: 1.02 } : {}}
+        whileTap={!sending ? { scale: 0.98 } : {}}
+        className="w-full bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-all disabled:opacity-70 shadow-lg hover:shadow-amber-400/30"
+      >
+        <AnimatePresence mode="wait">
+          {sending ? (
+            <motion.span key="load" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2">
+              <Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours…
+            </motion.span>
+          ) : (
+            <motion.span key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2">
+              <Send className="w-5 h-5" /> Envoyer ma demande
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </motion.button>
+    </form>
+  );
+};
+
+// ─── Page principale ──────────────────────────────────────────────────────────
+const Partenaires = () => {
+  const { partners, loading, error, reload } = usePartners();
+  const [filter, setFilter] = useState<FilterValue>("tous");
+
+  const filtered = filter === "tous" ? partners : partners.filter(p => p.categorie === filter);
+  const grouped  = categoryOrder.reduce<Record<string, Partner[]>>((acc, cat) => {
+    const items = filtered.filter(p => p.categorie === cat);
+    if (items.length) acc[cat] = items;
+    return acc;
+  }, {});
+
+  return (
+    <main className="min-h-screen bg-[#080808] text-white overflow-x-hidden"
+          style={{ fontFamily: "'DM Sans', sans-serif" }}>
+
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');`}</style>
+
+      {/* Blobs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden -z-0">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-400/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/3 right-0 w-[400px] h-[400px] bg-yellow-300/4 rounded-full blur-[100px]" />
+      </div>
+
+      {/* ── Hero ── */}
+      <section className="relative z-10 pt-28 pb-20 text-center px-4">
+        <motion.div initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-8">
+            <Handshake className="w-3.5 h-3.5" /> Nos Partenaires
+          </span>
+        </motion.div>
+
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-5xl md:text-7xl font-black mb-6 leading-[1.05]"
+          style={{ fontFamily: "'Playfair Display', serif" }}>
+          Ils font briller<br />
+          <span className="bg-gradient-to-r from-amber-300 to-yellow-500 bg-clip-text text-transparent">
+            Golden Vibes
+          </span>
+        </motion.h1>
+
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+          className="text-white/40 text-lg max-w-xl mx-auto">
+          Des partenaires d'exception qui soutiennent notre vision et créent avec nous des événements inoubliables.
+        </motion.p>
+
+        {!loading && !error && partners.length > 0 && (
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+            className="flex flex-wrap justify-center gap-8 mt-12">
+            {categoryOrder.map(cat => {
+              const count = partners.filter(p => p.categorie === cat).length;
+              if (!count) return null;
+              const cfg = getCfg(cat);
+              return (
+                <div key={cat} className="text-center">
+                  <p className="text-2xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>{count}</p>
+                  <p className="text-xs text-white/35 mt-1">{cfg.emoji} {cfg.label}</p>
+                </div>
+              );
+            })}
+          </motion.div>
+        )}
+      </section>
+
+      {/* ── Grille partenaires ── */}
+      <section className="relative z-10 container mx-auto max-w-6xl px-4 pb-24">
+        {!loading && !error && partners.length > 0 && (
+          <FilterBar active={filter} onChange={setFilter} />
+        )}
+
+        {loading && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.from({ length: 6 }).map((_, i) => <PartnerSkeleton key={i} />)}
+          </div>
+        )}
+
+        {error && (
+          <motion.div variants={scaleIn} initial="hidden" animate="visible"
+            className="flex flex-col items-center gap-4 py-20 text-center">
+            <AlertCircle className="w-12 h-12 text-red-400/60" />
+            <p className="text-white/40 text-sm">
+              Impossible de charger les partenaires<br />
+              <span className="text-red-400/60 text-xs">{error}</span>
+            </p>
+            <button onClick={reload}
+              className="inline-flex items-center gap-2 text-sm border border-white/10 px-4 py-2 rounded-xl hover:border-white/30 transition-colors text-white/50 hover:text-white">
+              <RefreshCw className="w-4 h-4" /> Réessayer
+            </button>
+          </motion.div>
+        )}
+
+        {!loading && !error && partners.length === 0 && (
+          <p className="text-center text-white/30 py-20">Aucun partenaire actif pour le moment.</p>
+        )}
+
+        {!loading && !error && Object.keys(grouped).length > 0 && (
+          <motion.div variants={stagger} initial="hidden" animate="visible" className="space-y-14">
+            {categoryOrder.map(cat => {
+              const items = grouped[cat];
+              if (!items?.length) return null;
+              const cfg = getCfg(cat);
+              const isPlatinum = cat === "platine";
+
+              return (
+                <motion.div key={cat} variants={fadeUp}>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className={`flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full ${cfg.badge}`}>
+                      {cfg.emoji} Partenaire {cfg.label}
+                    </span>
+                    <div className="flex-1 h-px bg-white/5" />
+                    <span className="text-xs text-white/20">{items.length} partenaire{items.length > 1 ? "s" : ""}</span>
+                  </div>
+                  <div className={`grid gap-6 ${isPlatinum ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}>
+                    {items.map((p, i) => (
+                      <PartnerCard key={p.id ?? `${p.nom}-${i}`} p={p} platinum={isPlatinum} />
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {!loading && !error && partners.length > 0 && Object.keys(grouped).length === 0 && (
+          <p className="text-center text-white/30 py-20">Aucun partenaire dans cette catégorie.</p>
+        )}
+      </section>
+
+      {/* ── Devenir Partenaire ── */}
+      <section className="relative z-10 bg-gradient-to-b from-white/2 to-transparent py-24">
+        <div className="container mx-auto max-w-6xl px-4">
+
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-400/10 text-amber-300 text-xs font-semibold tracking-widest uppercase mb-6">
+              <Handshake className="w-3.5 h-3.5" /> Rejoignez-nous
+            </span>
+            <h2 className="text-4xl md:text-6xl font-black mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Devenir{" "}
+              <span className="bg-gradient-to-r from-amber-300 to-yellow-500 bg-clip-text text-transparent">
+                Partenaire
+              </span>
+            </h2>
+            <p className="text-white/40 max-w-xl mx-auto">
+              Associez votre marque au prestige de Golden Vibes Events et bénéficiez d'une visibilité exceptionnelle.
+            </p>
+          </motion.div>
+
+          {/* Avantages */}
+          <motion.div variants={stagger} initial="hidden" whileInView="visible"
+            viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+            {advantages.map((adv, i) => (
+              <motion.div key={i} variants={fadeUp}
+                className="rounded-2xl border border-white/5 bg-white/3 p-6 text-center hover:border-amber-400/20 hover:bg-white/5 transition-all">
+                <div className="text-3xl mb-4">{adv.emoji}</div>
+                <h3 className="font-bold text-base mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>{adv.title}</h3>
+                <p className="text-white/40 text-sm">{adv.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Formulaire + Infos */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6 }}
+              className="lg:col-span-3 rounded-2xl border border-white/7 bg-white/3 p-8">
+              <h3 className="font-bold text-xl mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Formulaire de partenariat
+              </h3>
+              <p className="text-white/30 text-xs mb-6">
+                Votre demande sera enregistrée et traitée par notre équipe.
+              </p>
+              <ContactForm />
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-2 space-y-5">
+
+              <div className="rounded-2xl border border-white/7 bg-white/3 p-8">
+                <h4 className="font-bold text-lg mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  Contact Direct
+                </h4>
+                <div className="space-y-3 text-sm">
+                  {[
+                    { label: "Email",     value: "contact@goldenvibes-event.com", href: "mailto:contact@goldenvibes-event.com" },
+                    { label: "Téléphone", value: "+237 652 430 272",               href: "tel:+237652430272" },
+                    { label: "Adresse",   value: "Dschang, Cameroun",              href: undefined },
+                  ].map(row => (
+                    <div key={row.label} className="flex justify-between gap-2">
+                      <span className="text-white/30 shrink-0">{row.label}</span>
+                      {row.href
+                        ? <a href={row.href} className="text-amber-300/80 hover:text-amber-300 text-right transition-colors">{row.value}</a>
+                        : <span className="text-white/60 text-right">{row.value}</span>}
+                    </div>
+                  ))}
+                  <div className="flex justify-between gap-2 pt-2 border-t border-white/5">
+                    <span className="text-white/20 text-xs">RCCM</span>
+                    <span className="text-white/30 text-xs">RC/Dschang/2021/A/05</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/7 bg-white/3 p-6">
+                <h4 className="font-semibold text-sm mb-4 text-white/60 uppercase tracking-wider">
+                  Niveaux de partenariat
+                </h4>
+                <div className="space-y-3">
+                  {categoryOrder.map(cat => {
+                    const cfg = getCfg(cat);
+                    return (
+                      <div key={cat} className={`flex items-center gap-3 text-sm px-3 py-2 rounded-xl ${cfg.badge}`}>
+                        <span>{cfg.emoji}</span>
+                        <span className="font-semibold">{cfg.label}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <div className="flex justify-center pb-10 opacity-20">
+        <ChevronDown className="w-5 h-5 animate-bounce" />
+      </div>
+    </main>
+  );
+};
+
+export default Partenaires;
