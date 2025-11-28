@@ -1,0 +1,2 @@
+ALTER TABLE services ADD COLUMN IF NOT EXISTS image_url TEXT;
+ALTER TABLE services ADD COLUMN IF NOT EXISTS category_id UUID REFERENCES categories(id);
