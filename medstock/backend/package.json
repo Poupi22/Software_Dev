@@ -1,0 +1,38 @@
+{
+  "name": "medstock-backend",
+  "version": "1.0.0",
+  "description": "Backend for PharmaCare stock management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate": "node src/migrations/migration_runner.js",
+    "migrate:new": "node src/migrations/migration_runner.js create",
+    "seed": "node src/seeders/seeder.js",
+    "init": "npm run migrate && npm run seed"
+  },
+  "keywords": [
+    "pharmacy",
+    "stock",
+    "management"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^1.41.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0",
+    "joi": "^18.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^8.0.7",
+    "pdfkit": "^0.18.0",
+    "pg": "^8.20.0"
+  }
+}

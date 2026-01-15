@@ -1,0 +1,5 @@
+curl -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/json" -d "{\"email\":\"kingslydebruyne17@gmail.com\",\"mot_de_passe\":\"Admin123\"}"
+curl -X POST http://localhost:5000/api/categories -H "Authorization: Bearer %token%" -F "nom=Antifongiques" -F "description=Médicaments contre les champignons" -F "couleur=#e67e22" -F "image=@C:\Users\SIR-Tech\Pictures\meuf.PNG"
+
+curl -X POST http://localhost:5000/api/medicaments -H "Authorization: Bearer %token%" -F "nom=Fluconazole 150mg" -F "description=Antifongique efficace" -F "categorie_id=aac21c5c-9e23-47b1-9212-a649669237ce" -F "prix_achat=2000" -F "prix_vente=3500" -F "quantite=30" -F "seuil_alerte=5" -F "dosage=150mg" -F "forme=Gélule" -F "image=@C:\Users\SIR-Tech\Pictures\meuf.PNG"
+curl -X POST http://localhost:5000/api/ventes -H "Content-Type: application/json" -H "Authorization: Bearer %token%" -d "{\"client_nom\":\"Jean Dupont\",\"client_telephone\":\"690123456\",\"items\":[{\"medicament_id\":\"ec63867c-e4c6-4c1d-946e-2a23d25620f9\",\"quantite\":2}]}"
