@@ -1,0 +1,155 @@
+/* Journey of Excellence Section */
+.journey {
+    background: var(--light);
+    position: relative;
+}
+
+.journey-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+}
+
+.journey-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.journey-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 30px;
+    padding-right: 0;
+}
+
+.journey-content {
+    width: calc(50% - 40px);
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: var(--transition);
+}
+
+.journey-item:hover .journey-content {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.journey-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.journey-item:nth-child(odd) .journey-content::before {
+    right: -10px;
+}
+
+.journey-item:nth-child(even) .journey-content::before {
+    left: -10px;
+}
+
+.journey-year {
+    position: absolute;
+    top: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-accent);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.journey-item:nth-child(odd) .journey-year {
+    left: calc(50% - 100px);
+}
+
+.journey-item:nth-child(even) .journey-year {
+    right: calc(50% - 100px);
+}
+
+.journey-title {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.journey-description {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .journey-timeline::before {
+        left: 20px;
+    }
+    
+    .journey-item,
+    .journey-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    
+    .journey-content {
+        width: 100%;
+    }
+    
+    .journey-item:nth-child(odd) .journey-year,
+    .journey-item:nth-child(even) .journey-year {
+        left: -10px;
+        right: auto;
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+    
+    .journey-item:nth-child(odd) .journey-content::before,
+    .journey-item:nth-child(even) .journey-content::before {
+        left: -10px;
+        right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-card {
+        padding: 1.5rem;
+    }
+    
+    .value-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}

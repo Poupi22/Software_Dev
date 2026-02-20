@@ -1,0 +1,349 @@
+/* ====== PROJECTS HERO SECTION ====== */
+.projects-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+.projects-hero .image-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.projects-hero .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.projects-hero .slide.active {
+    opacity: 1;
+}
+
+.projects-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom, rgba(30, 58, 138, 0.8), rgba(16, 185, 129, 0.6)); */
+    z-index: 2;
+}
+
+.projects-hero .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.projects-hero .hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.projects-hero .hero-subtitle {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+/* ====== PROJECTS FILTER ====== */
+.projects-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary-light);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ====== PROJECTS GRID ====== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 350px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(30, 58, 138, 0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-info {
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.project-category {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-date {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+/* ====== CATEGORY TABS ====== */
+.category-tabs {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.tab-header {
+    display: flex;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.tab-btn {
+    padding: 1.2rem 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--gray);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    color: var(--primary);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ====== CLIENTS SECTION ====== */
+.clients-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.client-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 1200px) {
+    .projects-hero .hero-title {
+        font-size: 3.8rem;
+    }
+    
+    .projects-hero .hero-subtitle {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects-hero {
+        min-height: 700px;
+    }
+    
+    .projects-hero .hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-hero {
+        min-height: 600px;
+    }
+    
+    .projects-hero .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .projects-hero .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .tab-header {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .tab-btn.active::after {
+        width: 3px;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .projects-hero {
+        min-height: 500px;
+    }
+    
+    .projects-hero .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .projects-hero .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .client-logo {
+        height: 60px;
+    }
+}
